@@ -7,7 +7,8 @@ The  Sign Language MNIST dataset is from [Kaggle](https://www.kaggle.com/dataset
 # Data visualization
 plot a section of grayscale images using the training set with their
 corresponding label.
-![Alt text](images/greysign_output.png)
+
+![Alt text](images/greysign_output.jpg)
 
 From the images, it can be seen that almost all the gestures are centered in
 the image even though there is a small amount of them showing a little
