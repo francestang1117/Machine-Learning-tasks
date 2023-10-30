@@ -29,14 +29,14 @@ hospital)
 # Preprocessing and Analysis of the data
 ## Target Data Checking
 
-![Alt text](images/heart_disease_target.png)
+![Alt text](images/heart_disease_target.jpg)
 
 The bar chart and corresponding calculations reveal that 526 individuals exhibit the presence of heart disease, accounting for approximately 51.32% of the dataset, while 499 individuals exhibit an absence of heart disease, representing approximately 48.68% of the total. This indicates a balanced distribution within the target data.
 
 ## Analysis
 ### Feature relationship between variables
 
-![Alt text](images/feature_relationship_heatmap.png)
+![Alt text](images/feature_relationship_heatmap.jpg)
 
 From the heatmap analysis, the following observations can be made:
 
@@ -51,58 +51,58 @@ From the heatmap analysis, the following observations can be made:
 ### Visualiztion
 Relationship between heart disease and oldpeak
 
-![Alt text](images/oldpeak_vs_target.png)
+![Alt text](images/oldpeak_vs_target.jpg)
 
 Relationship between oldpeak and slope
 
-![Alt text](images/oldpeak_vs_slope.png)
+![Alt text](images/oldpeak_vs_slope.jpg)
 
 Relationship between exang and heart disease
 
-![Alt text](images/exang_vs_target.png)
+![Alt text](images/exang_vs_target.jpg)
 
 Relationship between exang and cp
 
-![Alt text](images/exang_vs_cp.png)
+![Alt text](images/exang_vs_cp.jpg)
 
 Relationship between cp and heart disease
 
-![Alt text](images/cp_vs_target.png)
+![Alt text](images/cp_vs_target.jpg)
 
 Relationship between thalach and age and heart disease
 
-![Alt text](images/thalach_vs_age_vs_target.png)
+![Alt text](images/thalach_vs_age_vs_target.jpg)
 
 Relationship between sex and heart disease
 
-![Alt text](images/sex_vs_target.png)
+![Alt text](images/sex_vs_target.jpg)
 
 Relationship between ca and heart disease
 
-![Alt text](images/ca_vs_target.png)
+![Alt text](images/ca_vs_target.jpg)
 
 relationship between thal and heart disease
 
-![Alt text](images/thal_vs_target.png)
+![Alt text](images/thal_vs_target.jpg)
 
 
 ## Clusters Evaluation
 ### Feature Selection
 
-![Alt text](images/feature_importance.png)
+![Alt text](images/feature_importance.jpg)
 
 The dataset was partitioned into two subsets using a threshold of 10, resulting in a categorical set and a numeric set. The categorical set comprises the features 'sex,' 'cp,' 'fbs,' 'restecg,' 'exang,' 'slope,' 'ca,' 'thal,' and 'target,' while the numeric set includes 'age,' 'trestbps,' 'chol,' 'thalach,' and 'oldpeak.' Given the prevalence of categorized features, the feature selection process was executed utilizing the RandomForestClassifier model. This selection yielded five most significant features: 'cp,' 'ca,' 'oldpeak,' 'thal,' and 'thalach.' Subsequently, one-hot encoding was applied to the categorical features 'cp,' 'ca,' and 'thal.'
 
 ### K-Means 
 Apply the K-means clustering method to derive patient profiles from the dataset, excluding labels. To assess the quality of the clusters, utilize the silhouette measure to choose the optimal number of clusters (k) that maximizes the silhouette score for the dataset.
 
-![Alt text](images/silhouette_score.png)
+![Alt text](images/silhouette_score.jpg)
 
 The results indicate that as the value of "k" increases, the silhouette score exhibits a general decreasing trend. The highest silhouette score, approximately 0.57, is achieved when "k" equals 2. 
 
 ### Illustrate the clusters in a 2D dimension using PCA
 
-![Alt text](images/pca_cluster.png)
+![Alt text](images/pca_cluster.jpg)
 
 ### Rand Index
 Rand Index of 0.57687 indicates that there is some level of agreement between the predicted results of the cluster and the labels given in the dataset, but it is not a perfect match. The value is greater than 0.5, which implies that there is more similarity than dissimilarity.

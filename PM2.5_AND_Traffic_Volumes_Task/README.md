@@ -26,20 +26,20 @@ https://data.novascotia.ca/Roads-Driving-and-Transport/Traffic-Volumes-Provincia
 
 # Information Gain
 
-![Alt text](images/information_gain.png)
+![Alt text](images/information_gain.jpg)
 
 The analysis of information gain highlights ADT as the primary determinant of PM2.5 levels, as it exhibits the highest information gain value among the considered features. The substantial information gain score of 0.678 indicates the significant influence of ADT on PM2.5 levels, underscoring its pivotal role in shaping the observed outcomes.
 
 # Decision Tree
 1. Fit the decision tree on 50% of the data and test it on 50% held out data. The accuracy is 
 
-![Alt text](images/decision_tree.png)
+![Alt text](images/decision_tree.jpg)
 
 The leaf with sample equal to 1 is very small and can be indicative of overfitting.
 
 * ROC
 
-![Alt text](images/roc.png)
+![Alt text](images/roc.jpg)
 
 Then accuracy is about 0.81 for DecisionTreeClassifier model.
 
@@ -52,19 +52,19 @@ After applying 10-fold cross validation, the accuracy is about 0.8088 for Decisi
 
 model with different max_depth
 
-![Alt text](images/max_depth.png)
+![Alt text](images/max_depth.jpg)
 
 As the max_depth hyperparameter increases, the disparity between the accuracy scores for the training and test datasets becomes more pronounced. Beyond a certain max_depth threshold, the training accuracy approaches unity, while the test accuracy plateaus.
 
 model with min_samples_split
 
-![Alt text](images/min_samples_split.png)
+![Alt text](images/min_samples_split.jpg)
 
 In the case of the min_samples_split parameter, larger values result in reduced accuracy scores for both the training and test datasets.
 
 model with min_samples_leaf
 
-![Alt text](images/min_samples_leaf.png)
+![Alt text](images/min_samples_leaf.jpg)
 
 as the min_samples_leaf parameter increases, the training accuracy exhibits a decreasing trend, while the test accuracy initially decreases, reaching its nadir between min_samples_leaf values of 10 and 15 before ascending.
 

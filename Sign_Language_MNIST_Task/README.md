@@ -19,7 +19,7 @@ same label 3.0 but they are zoomed at different ranges. Then we could use
 augmentation such as image shifting, rotation and zoom to increase the
 dataset.
 
-![Alt text](images/distribution_output.png)
+![Alt text](images/distribution_output.jpg)
 
 This is the distribution of the labels in the training set and testing set. The output shows that distribution of data is fairly balanced and there is no same number of images for each label.
 
@@ -42,7 +42,84 @@ The learning rate, responsible for the speed of model learning, determines the d
 2. Conduct experiments by varying the number and the order of the layers, including adding and removing batch-normalization and dropout layers.
 3. Continue experimentation by changing the optimizer and its parameters on the best model found, utilizing optimizers such as SGD, Adagrad, Adam, and RMSprop.
 
+## Visualization
+Model with 16 layers including 3 convolution layers and the activation is
+Relu, 3 MaxPool2D layers, 2 fully-connected layers, 1 fatten layer, some
+dropout layers and batch normalization.
+
+![Alt text](images/metrics.jpg)
+
+Model without batch normalization.
+
+![Alt text](<images/model_without _batch_normalization.jpg>)
+
+Model without dropout layers.
+
+![Alt text](images/model_without_dropout_layer.jpg)
+
+Model with 8 layers of 2 convolution layers, 2 max pool layers, 1 fully-connected layer, 2 batch normalization and 1 flatten layer.
+
+![Alt text](images/model_8_layers.jpg)
+
+Model with 5 layers including 1 convolution layer, 1 max pooling layer, 1 batch normalization, 1 flatten layer and 1 fully-connected layer.
+
+![Alt text](images/model_5_layers.jpg)
+
+Model with different order of layers.
+
+![Alt text](images/model_with_different_order.jpg)
+
+Model with optimizer Adagrad
+
+![Alt text](images/moderl_with_Adagrad.jpg)
+
+The model's performance is not great because even after 100 training attempts (epochs), it still hasn't converged well. The accuracy on the training data is only 0.5236, and on the validation data, it's 0.7867. The loss (a measure of error) is 1.4573 for training and a high 30.9216 for validation. And the whole learning rate seems small,
+especially on the training set. It can be seen that the start accuracy is very low and it requires more epochs to get flattened. The reason might be that even though the learning rate of the Adagrad optimizer will automatically adjust according to the different parameters and for the dense parameters the learning rate will be lower and the learning rate will be infinitely small in that an squared term will be added for each iteration.
+
+Model with optimizer SGD
+
+![Alt text](images/model_with_SGD.jpg)
+
+The performance metrics on the validation dataset consistently outperform those on the training dataset. This particular optimization technique exhibits superiority over Adagrad, achieving near convergence within 100 epochs. Notably, the learning rate undergoes a substantial reduction after the initial 20 epochs. This observation can be attributed to the inherent characteristics of Stochastic Gradient Descent (SGD), which updates the learning rate based on individual data samples, necessitating both forward and backward propagations with each update, which may exhibit a slower convergence rate.
+
+Model with optimizer Adam
+
+![Alt text](images/model_with_Adam.jpg)
+
+Adam demonstrates superior performance, not only in terms of its accuracy and loss metrics but also in its efficiency. Notably, it achieves convergence in a mere 32 epochs, leading to substantial savings in both memory and time when compared to Adagrad and SGD. While it requires slightly more epochs than RMSprop, Adam's rapid convergence within the initial 5 epochs is indicative of its effectiveness. This expeditious convergence is assumed to be attributed to Adam's utilization of both the gradient sum and the gradient squared sum, a strategy that accelerates the gradient descent process.
+
+Model with optimizer RMSprop
+
+![Alt text](images/model_with_RMSprop.jpg)
+
+The performance metrics of the RMSprop optimizer demonstrate close similarity to those of the Adam optimizer, notably with the advantage of converging in fewer training epochs. To make a selection between the two, I evaluate their prediction accuracy on the training dataset. The model trained with RMSprop yields an accuracy of 0.9804796430563302, while the model trained with Adam achieves a higher accuracy of 0.9881483547127718. Based on this evaluation, the Adam optimizer is deemed the preferred choice.
+
+Model with optimizer Adam and learning rate 0.00001
+
+![Alt text](images/model_learning_rate_0.00001.jpg)
+
+It is evident that the convergence of accuracy and loss is hindered by the excessively small learning rate, rendering 100 epochs insufficient for achieving convergence.
+
+Model with optimizer Adam and learning rate 0.0001
+
+![Alt text](images/model_learning_rate_0.0001.jpg)
+
+In this analysis, it is observed that as the learning rate increases, both the accuracy and loss metrics exhibit convergence. This phenomenon is indicative of a larger gradient descent step, which accelerates the convergence process, reducing the time required for model convergence.
+
+Model with optimizer Adam and learning rate 0.01
+
+![Alt text](images/model_learning_rate_0.01.jpg)
+
+
+The graphical representation illustrates a notable challenge in the convergence of accuracy and loss. This issue arises due to an excessively large learning rate, which, in turn, impedes the gradient descent algorithm from efficiently approaching the optimal solution. The consequence is a protracted convergence process and difficulty in reaching the desired optimum.
+
+Schedule the learning rate by configuring the initial_learning_rate at 1e-3, decay steps at 10,000, and a decay rate of 0.9. This adjustment in the learning rate strategy was motivated by the observed trends discussed earlier.
+
+![Alt text](images/model_with_scheduled_lr.jpg)
+
 # Classification report 
 The analysis of the classification report reveals that the precision for the majority of labels stands at 1.00, with exceptions noted for labels 2, 4, 8, 16, 18, 20, and 23. Furthermore, the accuracy rates for these labels consistently exceed 95%.
 
 <br>![Alt text](images/classification_report.jpg)
+
+The analysis of the classification report reveals that the precision values for the majority of labels are 1.00, indicating near-perfect precision, with the exceptions being labels 2, 4, 8, 16, 18, 20, and 23. Despite variations in precision, the accuracy of the model remains consistently high, surpassing 95% for these labels.
