@@ -53,38 +53,61 @@ Relationship between heart disease and oldpeak
 
 ![Alt text](images/oldpeak_vs_target.jpg)
 
+It's evident from the data that as "oldpeak" values increase, the individuals with heart disease decreases, and almost disappear when "oldpeak" reaches 4. Most individuals with heart disease are concentrated within the range of "oldpeak" from 0 to 3.
+
 Relationship between oldpeak and slope
 
 ![Alt text](images/oldpeak_vs_slope.jpg)
+
+The concentration of individuals with downsloping and flat can be observed within the oldpeak range of 1 to 3.
+
+The two charts depict that individuals with an oldpeak value near 0.1 and a downsloping slope have the highest incidence of heart disease among the studied population.
 
 Relationship between exang and heart disease
 
 ![Alt text](images/exang_vs_target.jpg)
 
+The results indicate that angina induced by exercise is associated with a lower probability of a heart disease diagnosis compared to non-exercise-induced angina. Therefore, when evaluating cases of exercise-induced angina, healthcare providers should consider additional factors or potential alternative diagnoses.
+
 Relationship between exang and cp
 
 ![Alt text](images/exang_vs_cp.jpg)
+
+The results indicate that within the categories of chest pain types, the majority of cases classified as typical angina are associated with exercise-induced angina. In contrast, the remaining types of chest pain are more likely to have causes unrelated to exercise.
 
 Relationship between cp and heart disease
 
 ![Alt text](images/cp_vs_target.jpg)
 
+The bar chart illustrates a notable correlation between chest pain types and the likelihood of heart disease. It indicates that individuals with chest pain type of typical angina are less predisposed to heart disease, whereas those with other types of chest pain (ranging from 1 to 3) exhibit a higher probability of heart disease. This observation suggests a discernible relationship between chest pain types and the presence of heart disease. Consequently, it provides additional insights supporting the earlier conclusion that exercise-induced angina is less frequently associated with a heart disease diagnosis.
+
 Relationship between thalach and age and heart disease
 
 ![Alt text](images/thalach_vs_age_vs_target.jpg)
+
+The chart illustrates that as age increases, there is a corresponding decrease in maximum heart rate. Notably, individuals between the ages of 40 and 60 show a higher likelihood of heart disease. Additionally, there are more cases of heart disease among those aged 30 to 40 than among those without heart disease in the same age group, indicating a trend of heart disease affecting a younger population. On average, individuals with heart disease exhibit a higher maximum heart rate.
 
 Relationship between sex and heart disease
 
 ![Alt text](images/sex_vs_target.jpg)
 
+The chart illustrates a higher prevalence of heart disease among women compared to men.
+
 Relationship between ca and heart disease
 
 ![Alt text](images/ca_vs_target.jpg)
+
+The chart demonstrates an increased occurrence of heart disease in individuals with zero major vessels colored by fluoroscopy.
 
 relationship between thal and heart disease
 
 ![Alt text](images/thal_vs_target.jpg)
 
+Thalassemia is an inherited (i.e., passed from parents to children through
+genes) blood disorder caused when the body doesn’t make enough of a
+protein called hemoglobin, an important part of red blood cells [[2]](#2).
+
+The chart illustrates a notable trend where individuals with heart disease outnumber those without it when their thalassemia type is categorized as the second type. This suggests a potential association between this blood disorder and the occurrence of heart disease.
 
 ## Clusters Evaluation
 ### Feature Selection
@@ -117,4 +140,7 @@ Additionally, McNemar's test reveals no statistically significant difference in 
 
 # References
 <a id="1">[1]</a>
-R. Detrano, A. Jánosi, W. Steinbrunn, M. Pfisterer, J. Schmid, at al. (1989). "Heart Disease". *Published in American Journal of Cardiology* [Online]. Available: https://archive.ics.uci.edu/dataset/45/heart+disease. Accessed: Oct. 26, 2022
+R. Detrano, A. Jánosi, W. Steinbrunn, M. Pfisterer, J. Schmid, at al. (1989). "Heart Disease". *Published in American Journal of Cardiology* [Online]. Available: https://archive.ics.uci.edu/dataset/45/heart+disease. [Accessed Oct. 26, 2022].
+
+<a id="2">[2]</a>
+*What is thalassemia?*, Centers for Disease Control and Prevention, Apr. 2023, Available: https://www.cdc.gov/ncbddd/thalassemia/facts.html. [Accessed Oct. 26, 2022]. 
